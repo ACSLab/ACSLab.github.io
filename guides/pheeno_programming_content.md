@@ -111,36 +111,33 @@ To use the premade libraries for Pheeno you must first download the files and pl
 There should be a USB chord coming out from the Pheeno robot to the Raspberry Pi. This chord allows for serial communication between the Raspberry Pi and the Arduino (and the programming of the Arduino from the Raspberry Pi but this will be explored later). This USB chord can also be used to program the Arduino Pro Mini directly from your computer. Plug the USB into your computer and allow the drivers to install. Once the drivers have installed, open the Arduino software. Go to the Tools tab of the Arduino software and change the board to the Arduino Pro or Pro Mini as seen in Figure \ref{fig:ChangeBoard}.
 
 <figure>
-<figure>
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoChangeBoard.jpg" width="450px" height="500px" />
-        <figcaption>Figure 1(a): Changing the Board of the Arduino software.</figcaption>
+        <figcaption>(a) Changing the Board of the Arduino software.</figcaption>
     </center>
 </figure>
 
 <figure>
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoChangeProcessor.jpg" width="450px" height="500px" />
-        <figcaption>Figure 1(b): Changing the processor of the Arduino software.</figcaption>
+        <figcaption>(b) Changing the processor of the Arduino software.</figcaption>
     </center>
 </figure>
 
 <figure>
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoChangePort.jpg" width="450" height="500" />
-        <figcaption>Figure 1(c): Changing the port of the Arduino software.</figcaption>
+        <figcaption>(c) Changing the port of the Arduino software.</figcaption>
     </center>
 </figure>
 
 <figure>
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoUpload.jpg" width="450" height="500" />
-        <figcaption>Figure 1(d): Uploading a script to Pheeno.</figcaption>
+        <figcaption>(d) Uploading a script to Pheeno.</figcaption>
     </center>
 </figure>
-
-<figcaption>Figure 1: Steps to upload an Arduino script to Pheeno.</figcaption>
-</figure>
+***Figure 1:*** *Steps to upload an Arduino script to Pheeno.*
 
 Next, go to the Tools tab of the Arduino software and change the processor to the ATMega328 (3.3V, 8MHz) as seen in Figure \ref{fig:ChangeProcessor}.
 
@@ -186,9 +183,9 @@ This function returns the current heading in degrees from magnetic north in a ra
 <figure>
     <center>
         <img src="{{ site.url }}/assets/programming/accelAxis.jpg" width="500" height="500" />
-        <figcaption> Figure 2: The axis of the IMU on Pheeno.</figcaption>
     </center>
 </figure>
+***Figure 2:*** *The axis of the IMU on Pheeno.*
 
 #### Pheeno.readAccel()
 This function returns the accelerometer readings in the x, y, and z directions. These axis with respect to the robot may be seen in Figure \ref{fig:accelAxis}. The sensor's measurements are output in cm/s. The output is stored in the variables,

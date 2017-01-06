@@ -55,7 +55,7 @@ html {
 
 .sidebar {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
@@ -86,8 +86,8 @@ html {
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
-  /* added these two options to enable a scrollbar */
-  height: 800px;
+  /* added these three options to enable a scrollbar */
+  height: 750px;
   width: 320px;
   overflow-y: scroll;
 }
