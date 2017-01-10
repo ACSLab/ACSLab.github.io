@@ -31,13 +31,14 @@ A quick startup guide can be found [here](https://www.raspberrypi.org/help/noobs
 ### Making Sure the Camera Works!
 Again, a great guide with video is [here](https://www.raspberrypi.org/help/camera-module-setup/). Again below will summarize the steps to making sure the camera works!
 
-First let's physically install the camera board.*<font color="red">Make sure your Pi is off when installing!</font>* The flex cable has gray connector strips on the back side. Behind the Ethernet port is a black plastic connector this goes into. Lift the plastic tabs on the side of this connector to unlock the connector. Insert the flex cable so the tin connectors are facing away from the ethernet port and are level. Push the plastic tabs back down so the wire is locked in place. When done, the setup should look like Figure \ref{fig:cameraSetup}. Great now the camera is physically installed!
+First let's physically install the camera board.*<font color="red">Make sure your Pi is off when installing!</font>* The flex cable has gray connector strips on the back side. Behind the Ethernet port is a black plastic connector this goes into. Lift the plastic tabs on the side of this connector to unlock the connector. Insert the flex cable so the tin connectors are facing away from the ethernet port and are level. Push the plastic tabs back down so the wire is locked in place. When done, the setup should look like Figure [1](raspberry_pi_content#fig1). Great now the camera is physically installed!
 
-<center>
-<img src="{{ site.url }}/assets/raspberry_pi/installCamera.jpg" width="750" height="500" />
-</center>
-
-*Raspberry Pi with camera board installed.*
+<figure id="fig1">
+    <center>
+        <img src="{{ site.url }}/assets/raspberry_pi/installCamera.jpg" width="750" height="500" />
+    </center>
+</figure>
+***Figure 1:*** *Raspberry Pi with camera board installed.*
 
 Now we can fully connect the Raspberry Pi again. Make sure it is connected to the internet by plugging in an ethernet chord or connecting via wifi. When it boots open the command terminal and upgrade the firmware to the latest version through the commands:
 
@@ -52,17 +53,18 @@ Now we will let the Pi know we want it to use the camera pins. In the command te
 sudo raspi-config
 ```
 
-to bring up the configuration settings for the Pi. Go to the *Enable Camera* option. Choose the enable option. Select finish and reboot the Pi! Now everything should be ready to take a picture so lets try! First, go to the graphical user interface (type *startx* at the terminal).  To test it open the command terminal (seen in Figure \ref{fig:terminal}) and type:
+to bring up the configuration settings for the Pi. Go to the *Enable Camera* option. Choose the enable option. Select finish and reboot the Pi! Now everything should be ready to take a picture so lets try! First, go to the graphical user interface (type *startx* at the terminal).  To test it open the command terminal (seen in Figure [2](raspberry_pi_content#fig2)) and type:
 
 ```bash
 raspivid -t 10000
 ```
 
-<center>
-<img src="{{ site.url }}/assets/raspberry_pi/terminal.png" width="500" height="500" />
-</center>
-
-*Raspberry Pi graphical user interface with LXTerminal highlighted.*
+<figure id="fig2">
+    <center>
+        <img src="{{ site.url }}/assets/raspberry_pi/terminal.png" width="500" height="500" />
+    </center>
+</figure>
+***Figure 2:*** *Raspberry Pi graphical user interface with LXTerminal highlighted.*
 
 This should have displayed a picture on the monitor for 10 seconds (note the units of the argument after the -t are in ms). Hopefully it all worked!
 

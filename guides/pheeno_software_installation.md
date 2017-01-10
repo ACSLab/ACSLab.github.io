@@ -17,11 +17,11 @@ The following dependencies/programs are required to use these files:
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 - [pySerial](https://github.com/pyserial/pyserial)
 - [picam](https://www.raspberrypi.org/learning/getting-started-with-picamera/)
-    - NOTE: This should be a default package on the Raspberry Pi.
+    - **NOTE:** This should be a default package on the Raspberry Pi.
 - [NumPy](http://www.numpy.org/)
-    - NOTE: The SciPy stack is rather difficult to install on a Windows environment. [This](http://www.lfd.uci.edu/~gohlke/pythonlibs/) guide may help. Make sure to install all the dependencies for each version part of the SciPy stack!
+    - **NOTE:** The SciPy stack is rather difficult to install on a Windows environment. [This](http://www.lfd.uci.edu/~gohlke/pythonlibs/) guide may help. Make sure to install all the dependencies for each version part of the SciPy stack!
 - [Tkinter](http://tkinter.unpythonic.net/wiki/How_to_install_Tkinter)
-    - NOTE: Tkinter is typically installed by default. If it is not, please refer to the link about for installation instructions.
+    - **NOTE:** Tkinter is typically installed by default. If it is not, please refer to the link about for installation instructions.
 
 Currently, Python 2.7+ is the only supported platform. Getting these files to work Python 3 is possible if one was able to install OpenCV on Python 3. Full Python 3 compatibility will be implemented as soon as an OpenCV Python 3 implementation is made stable.
 

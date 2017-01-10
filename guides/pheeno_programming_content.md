@@ -8,10 +8,10 @@ title: Beginning to Program Pheeno
 # {{ page.title }}
 One of the processors on board the Pheeno robotic platform is the Arduino Pro Mini with the ATMega328 (3.3V, 8MHz) processor. This section of the guide will introduce how the sensors and motors on the robot are controlled by this processor. It will also walk you through small codes to make the robot move around and sense its environment.
 
-This guide will focus heavily on premade libraries and code available on the [GitHub](https://github.com/ACSLab/PheenoRobot/) repository for Pheeno. These codes and libraries are not necessary for the operation of Pheeno in the long run but do allow for easier coding with subroutines for making the robot drive around using open and closed loop control. If you are new to Arduino programming and general electronics, Section \ref{sec:ArduinoPinInfo} may not be very informative and can be skimmed over. If you are experienced in Arduino coding, Section \ref{sec:ArduinoPinInfo} gives details on how the sensors and motors are connected to the Arduino so you can develop your own scripts. If you run into issues with programming the Arduino, there are plenty of resources available at the [Arduino Forums](https://forum.arduino.cc/) and specifically on the [Arduino Pro Mini](https://www.arduino.cc/en/Guide/ArduinoProMini/). Of course, always feel free to contact the e-mail above with any questions or issues!
+This guide will focus heavily on premade libraries and code available on the [GitHub](https://github.com/ACSLab/PheenoRobot/) repository for Pheeno. These codes and libraries are not necessary for the operation of Pheeno in the long run but do allow for easier coding with subroutines for making the robot drive around using open and closed loop control. If you are new to Arduino programming and general electronics, the [next](pheeno_programming_content#general-pin-information-for-connection-between-the-arduino-and-motors-and-sensors) section may not be very informative and can be skimmed over. If you are experienced in Arduino coding, the [next](pheeno_programming_content#getting-started) section gives details on how the sensors and motors are connected to the Arduino so you can develop your own scripts. If you run into issues with programming the Arduino, there are plenty of resources available at the [Arduino Forums](https://forum.arduino.cc/) and specifically on the [Arduino Pro Mini](https://www.arduino.cc/en/Guide/ArduinoProMini/). Of course, always feel free to contact the e-mail above with any questions or issues!
 
 ## General Pin Information for Connection between the Arduino and Motors and Sensors
-If you want to create your own code and bypass the premade libraries this section will explain briefly how Pheeno's sensors and motors are connected to the Arduino! Table 1 gives a general overview of how the pins of the Arduino Pro Mini are connected to the various sensors and actuators.
+If you want to create your own code and bypass the premade libraries this section will explain briefly how Pheeno's sensors and motors are connected to the Arduino! *Table 1* gives a general overview of how the pins of the Arduino Pro Mini are connected to the various sensors and actuators.
 
 <style>
 caption {
@@ -85,7 +85,7 @@ caption {
         <td> 4 </td>
         <td> Digital </td>
     </tr>
-    <caption> Table 1: Pheeno's component connections to the Arduino Pro Mini. </caption>
+    <caption><i><strong>Table 1:</strong> Pheeno's component connections to the Arduino Pro Mini.</i></caption>
 </table>
 
 The IR range sensor data is relatively straight forward. The analog voltage input is taken in through the 10 bit ADC converter measured from ground to VCC. The conversion from voltage to distance is fairly linear until the extremes of the sensor. An example conversion can be found in the readIR function of Pheeno.cpp. This conversion was found experimentally so feel free to find your own conversion if you find it is too inaccurate.
@@ -105,33 +105,33 @@ This section will give a brief introduction to installing the Arduino program to
 If you do not have the Arduino software on your computer, first go to the [Arduino software download page](https://www.arduino.cc/en/Main/Software). Download the appropriate software for your operating system and install it!
 
 ### Installing the Pheeno Libraries
-To use the premade libraries for Pheeno you must first download the files and place them in the right place on your computer so the Arduino software can access them. From the [GitHub](https://github.com/ACSLab/PheenoRobot/) repository for Pheeno download the Code folder. Inside this folder should be an Arduino subfolder with folders labeled Encoder, LSM303, and Pheeno. Copy those three folders to your Documents/Arduino/libraries folder. Now open the Arduino software. If all was done correctly, when you go to File --> Examples, you should see Encoder, LSM303, and Pheeno at the bottom (you may have to scroll down if you have a lot of arduino libraries already)! If this does not work or the above instructions are unclear, it is recommended to look through the [Arduino Library Guide](https://www.arduino.cc/en/Guide/Libraries/).
+To use the premade libraries for Pheeno you must first download the files and place them in the right place on your computer so the Arduino software can access them. From the [GitHub](https://github.com/ACSLab/PheenoRobot/) repository for Pheeno download the Code folder. Inside this folder should be an Arduino subfolder with folders labeled Encoder, LSM303, and Pheeno. Copy those three folders to your *Documents/Arduino/libraries* folder. Now open the Arduino software. If all was done correctly, when you go to File --> Examples, you should see Encoder, LSM303, and Pheeno at the bottom (you may have to scroll down if you have a lot of arduino libraries already)! If this does not work or the above instructions are unclear, it is recommended to look through the [Arduino Library Guide](https://www.arduino.cc/en/Guide/Libraries/).
 
 ### Uploading Your First Script
-There should be a USB chord coming out from the Pheeno robot to the Raspberry Pi. This chord allows for serial communication between the Raspberry Pi and the Arduino (and the programming of the Arduino from the Raspberry Pi but this will be explored later). This USB chord can also be used to program the Arduino Pro Mini directly from your computer. Plug the USB into your computer and allow the drivers to install. Once the drivers have installed, open the Arduino software. Go to the Tools tab of the Arduino software and change the board to the Arduino Pro or Pro Mini as seen in Figure \ref{fig:ChangeBoard}.
+There should be a USB chord coming out from the Pheeno robot to the Raspberry Pi. This chord allows for serial communication between the Raspberry Pi and the Arduino (and the programming of the Arduino from the Raspberry Pi but this will be explored later). This USB chord can also be used to program the Arduino Pro Mini directly from your computer. Plug the USB into your computer and allow the drivers to install. Once the drivers have installed, open the Arduino software. Go to the Tools tab of the Arduino software and change the board to the Arduino Pro or Pro Mini as seen in Figure [1a](pheeno_programming_content#fig1a).
 
-<figure>
+<figure id="fig1a">
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoChangeBoard.jpg" width="450px" height="500px" />
         <figcaption>(a) Changing the Board of the Arduino software.</figcaption>
     </center>
 </figure>
 
-<figure>
+<figure id="fig1b">
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoChangeProcessor.jpg" width="450px" height="500px" />
         <figcaption>(b) Changing the processor of the Arduino software.</figcaption>
     </center>
 </figure>
 
-<figure>
+<figure id="fig1c">
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoChangePort.jpg" width="450" height="500" />
         <figcaption>(c) Changing the port of the Arduino software.</figcaption>
     </center>
 </figure>
 
-<figure>
+<figure id="fig1d">
     <center>
         <img src="{{ site.url }}/assets/programming/ArduinoUpload.jpg" width="450" height="500" />
         <figcaption>(d) Uploading a script to Pheeno.</figcaption>
@@ -139,11 +139,11 @@ There should be a USB chord coming out from the Pheeno robot to the Raspberry Pi
 </figure>
 ***Figure 1:*** *Steps to upload an Arduino script to Pheeno.*
 
-Next, go to the Tools tab of the Arduino software and change the processor to the ATMega328 (3.3V, 8MHz) as seen in Figure \ref{fig:ChangeProcessor}.
+Next, go to the Tools tab of the Arduino software and change the processor to the ATMega328 (3.3V, 8MHz) as seen in Figure [1(b)](pheeno_programming_content#fig1b).
 
-Finally, go to the Tools tab of the Arduino software and change the port to the one that the robot is plugged into. Typically there should only be one unless you have another USB device that uses serial communication connected. An example can be seen in Figure \ref{fig:ChangePort}. <font color="red">NOTE: The number associated with the port may not be the same!</font>
+Finally, go to the Tools tab of the Arduino software and change the port to the one that the robot is plugged into. Typically there should only be one unless you have another USB device that uses serial communication connected. An example can be seen in Figure [1(c)](pheeno_programming_content#fig1c). <font color="red">NOTE: The number associated with the port may not be the same!</font>
 
-Now the Arduino software knows what type of board to talk to and through what port. So now you can upload any code you want! To test this all out let's upload an example script that will be explained later. Go to *File* --> *Examples* --> *Pheeno* --> *RandomWalkObstacleAvoidExample*. This should load a premade script if you have done everything in Section \ref{PheenoLibrary} correctly. Now click the arrow in the upper left hand corner of the Arduino software to upload it to the robot. <font color="red">NOTE: THIS SCRIPT MAKES PHEENO RUN AROUND RANDOMLY! MAKE SURE YOU'RE HOLDING THE PLATFORM SO IT DOESN'T RUN OFF THE TABLE OR MAKE SURE THE ROBOT IS OFF WHILE UPLOADING!</font> When the Arduino software says "Done uploading", as seen in Figure \ref{fig:ArduinoUpload}, you can disconnect the robot and let it run around.
+Now the Arduino software knows what type of board to talk to and through what port. So now you can upload any code you want! To test this all out let's upload an example script that will be explained later. Go to *File* --> *Examples* --> *Pheeno* --> *RandomWalkObstacleAvoidExample*. This should load a premade script if you have done everything in ["Installing the Pheeno Libraries"](pheeno_programming_content#installing-the-pheeno-libraries) section correctly. Now click the arrow in the upper left hand corner of the Arduino software to upload it to the robot. <font color="red">NOTE: THIS SCRI#PT MAKES PHEENO RUN AROUND RANDOMLY! MAKE SURE YOU'RE HOLDING THE PLATFORM SO IT DOESN'T RUN OFF THE TABLE OR MAKE SURE THE ROBOT IS OFF WHILE UPLOADING!</font> When the Arduino software says "Done uploading", as seen in Figure [1(d)](pheeno_programming_content#fig1d), you can disconnect the robot and let it run around.
 
 ## Pheeno Arduino Library Functions
 If you plan on using the Pheeno library for the Arduino, you can take advantage of some premade functions! This section details what they do and what inputs they take briefly! To use the Pheeno library in any Arduino script, you must first include the necessary libraries shown below!
@@ -176,11 +176,11 @@ This function returns the current count for the right and left encoder. This sub
 * **myRobot.encoderCountR**	(The count of the right encoder.)
 
 #### Pheeno.readCompass(float magNorthOffset)
-This function returns the current heading in degrees from magnetic north in a range of $0^\circ$ to $359^\circ$. The measurement is done with respect to Pheeno's x-axis as defined in Figure \ref{fig:accelAxis}. Positive rotation is CCW. The argument given allows the user to input the difference between magnetic north and their desired axis. This allows the function to return the robot's heading with respect to a given axis. If an argument of $0$ is given, the function will return Pheeno's heading with respect to magnetic north. If an argument of 10 is given, the function will return Pheeno's heading with respect to an axis 10 degrees CCW of magnetic north. The output is stored in the variable,
+This function returns the current heading in degrees from magnetic north in a range of 0&#176; to 359&#176;. The measurement is done with respect to Pheeno's x-axis as defined in Figure [2](pheeno_programming_content#fig2). Positive rotation is CCW. The argument given allows the user to input the difference between magnetic north and their desired axis. This allows the function to return the robot's heading with respect to a given axis. If an argument of *0* is given, the function will return Pheeno's heading with respect to magnetic north. If an argument of 10 is given, the function will return Pheeno's heading with respect to an axis 10 degrees CCW of magnetic north. The output is stored in the variable,
 
 * **myRobot.IMUOrientation**
 
-<figure>
+<figure id="fig2">
     <center>
         <img src="{{ site.url }}/assets/programming/accelAxis.jpg" width="500" height="500" />
     </center>
@@ -188,7 +188,7 @@ This function returns the current heading in degrees from magnetic north in a ra
 ***Figure 2:*** *The axis of the IMU on Pheeno.*
 
 #### Pheeno.readAccel()
-This function returns the accelerometer readings in the x, y, and z directions. These axis with respect to the robot may be seen in Figure \ref{fig:accelAxis}. The sensor's measurements are output in cm/s. The output is stored in the variables,
+This function returns the accelerometer readings in the x, y, and z directions. These axis with respect to the robot may be seen in Figure [2](pheeno_programming_content#fig2). The sensor's measurements are output in cm/s. The output is stored in the variables,
 
 * **myRobot.IMUACCX** (The acceleration in the x direction.)
 * **myRobot.IMUACCY** (The acceleration in the y direction.)
@@ -199,7 +199,7 @@ This function returns the accelerometer readings in the x, y, and z directions. 
 This is a function that figures out where Pheeno is in space using only the encoder measurements as feedback. The function requires, as input, the time between function calls to calculate how far it has gone in that time. The update is based on the unicycle model (a kinematic model) and will accumulate error over time due to unavoidable wheel slipping and assumption errors from the model.
 
 #### Pheeno.sensorFusionPositionUpdate(float timeStep, float northOffset)
-This is a function that figures out where Pheeno is in space using all of the onboard odometry. The update is based on the unicycle model (a kinematic model). Using a complementary filter, the magnetometer and encoder measurements are used to determine Pheeno's global orientation and the accelerometer and encoders are used to determine Pheeno's linear displacement. The encoder measurements are high pass filtered in this function while the accelerometer and compass measurements are low pass filtered. The gains for this filter can be altered in the Pheeno.cpp file. This function requires the time step between function calls (for the encoder estimate updates) and the offset between magnetic north and a desired axis (if the user requires).
+This is a function that figures out where Pheeno is in space using all of the onboard odometry. The update is based on the unicycle model (a kinematic model). Using a complementary filter, the magnetometer and encoder measurements are used to determine Pheeno's global orientation and the accelerometer and encoders are used to determine Pheeno's linear displacement. The encoder measurements are high pass filtered in this function while the accelerometer and compass measurements are low pass filtered. The gains for this filter can be altered in the *Pheeno.cpp* file. This function requires the time step between function calls (for the encoder estimate updates) and the offset between magnetic north and a desired axis (if the user requires).
 
 ### Individual Motor Functions
 The input of all the following functions, motorSpeed, is a in arduino PWM units which are integers ranging from 0-255. 0 means no motion while 255 is as fast as it can go. These are all open loop. It is advised to put controllers over these. One is provided below!
@@ -230,26 +230,26 @@ This is a standard PID controller that maintains the speed of the left and right
 This is a standard PID controller moves Pheeno from its current location to a new desired location. The PID controller maintains Pheeno's heading in the correct direction while driving at a desired velocity. The inputs are the desired global X-Position (cm), desired global Y-Position (cm), desired linear velocity (cm/s), and the time step (ms) of the controller. The controller has been designed around a 0.1 second time step. The gains of the system can be changed in the Pheeno.cpp file.
 
 #### rotateAboutICC(float R, float WSpeed)
-This function drives Pheeno in a circle of a given radius at a desired angular speed. The inputs of the function are R the radius of the desired circle (cm), WSpeed (rad/s) the desired angular speed the circle is traversed. The function uses the PIDMotorControl function described in Section \ref{sec:PIDMotorControl}.
+This function drives Pheeno in a circle of a given radius at a desired angular speed. The inputs of the function are R the radius of the desired circle (cm), WSpeed (rad/s) the desired angular speed the circle is traversed. The function uses the PIDMotorControl function described in [PIDMotorControl](pheeno_programming_content#pidmotorcontrolfloat-deslvel-float-desrvel) section.
 
 ## Calibrating Pheeno's IMU
 ### Manual Calibration
 For manual calibration open the script ManualValuesIMU.ino in the Arduino folder in the GitHub repository for Pheeno. To understand the calibration routine used in the following scripts, this is an Arduino script that will print out the accelerometer and magnetometer values. This script should be used if the EEPROM can no longer store information, to understand how the calibration is done, or to get the magnetic north offset used in other scripts.
 
-Once uploading the script do not unplug the USB cord from the computer. Turn on the robot and open the serial monitor in the Arduino software. There should be numbers scrolling across the screen like in Figure \ref{fig:ManualCalibrationSerial}. The first set of numbers under the "Magnetometer!" line are two vectors of the min and max readings of the magnetometer along the {x, y, z} axis. The second set of numbers under "Accelerometer!" are the averaged accelerometer measurements along the x, y, z axis. The last set of numbers under "Orientation!" is the current direction the robot has measured facing with respect to magnetic north (in degrees!).
+Once uploading the script do not unplug the USB cord from the computer. Turn on the robot and open the serial monitor in the Arduino software. There should be numbers scrolling across the screen like in Figure [3](pheeno_programming_content#fig3). The first set of numbers under the "Magnetometer!" line are two vectors of the min and max readings of the magnetometer along the {x, y, z} axis. The second set of numbers under "Accelerometer!" are the averaged accelerometer measurements along the x, y, z axis. The last set of numbers under "Orientation!" is the current direction the robot has measured facing with respect to magnetic north (in degrees!).
 
 To use this script,  place the robot where the experiment will take place without disconnecting it from the computer. Turn on the robot, open the serial monitor, and let it sit still for a period of time. During this time the accelerometer values are being averaged. These values will be non zero due to the natural slant of the ground or the orientation of the IMU mounted in the Pheeno robot. After a good amount of time has passed (~30 seconds), record the accelerometer values. These will be the biases you subtract off your readings to get an unbiased reading during your experiments. Next pick up Pheeno and rotate the robot about its three axis. Do this several times. When you place it back on the ground you should notice the vectors under the Magnetometer have changed. Record these values. These are the max and min values of the magnetic field in your experimental space and allow for Pheeno to better predict its heading with respect to magnetic north. The orientation in this script is just to give an idea on how well the compass is calibrated with default values. Spin Pheeno 90 degrees and see if the angle does change by about 90 degrees.
 
-Now that you have recorded the values open ManualInputEEPROM.ino. This script writes the values you have recorded to the EEPROM of the Arduino. The EEPROM of the Arduino is like a mini hard drive where you can save data that won't be erased when the power to the robot is lost (very useful for calibration data!). Insert the data you have written down in the correct spots of the code (described below).
+Now that you have recorded the values open *ManualInputEEPROM.ino*. This script writes the values you have recorded to the EEPROM of the Arduino. The EEPROM of the Arduino is like a mini hard drive where you can save data that won't be erased when the power to the robot is lost (very useful for calibration data!). Insert the data you have written down in the correct spots of the code (described below).
 
-<figure>
+<figure id="fig3">
     <center>
         <img src="{{ site.url }}/assets/programming/ManualCalibrationSerial.jpg" width="450" height="500" />
-        <figcaption>Figure 3: The serial output of the CalibrateIMU script.</figcaption>
     </center>
 </figure>
+***Figure 3:*** *The serial output of the CalibrateIMU script.*
 
-This paragraph briefly describes the ManualVluesIMU.ino code shown below. Lines 2 and 3 import the correct libraries used to get data from the LSM303D IMU onboard the robot. Lines 6 and 7 set up the LSM303 library for the rest of the script creating two vectors to store the max and min values for the magnetometer. Lines 9 to 11 contain variables that store the acceleration mean values. Line 13 creates a counter to help with the acceleration means. The setup first starts the serial port with a bit rate of 9600. Then sets up the two libraries that were imported. Line 25 increments the count variable. Line 26 gets new updated data from the LSM303D. Lines 30 to 36 update the min and max values of the magnetometer vector. Lines 40 to 42 update the mean of the acceleration variables. Lines 45 to 59 simply format and perform the prints that occurs through the serial.
+This paragraph briefly describes the *ManualVluesIMU.ino* code shown below. Lines 2 and 3 import the correct libraries used to get data from the LSM303D IMU onboard the robot. Lines 6 and 7 set up the LSM303 library for the rest of the script creating two vectors to store the max and min values for the magnetometer. Lines 9 to 11 contain variables that store the acceleration mean values. Line 13 creates a counter to help with the acceleration means. The setup first starts the serial port with a bit rate of 9600. Then sets up the two libraries that were imported. Line 25 increments the count variable. Line 26 gets new updated data from the LSM303D. Lines 30 to 36 update the min and max values of the magnetometer vector. Lines 40 to 42 update the mean of the acceleration variables. Lines 45 to 59 simply format and perform the prints that occurs through the serial.
 
 ```cpp
 /*
@@ -315,7 +315,7 @@ void loop() {
 }
 ```
 
-This paragraph briefly describes the ManualValuesIMU.ino code shown below. Lines 3 and 4 import the libraries used for storing the calibration data. Line 8 should have the values in the {} changed to the ones recorded in ManualValuesIMU.ino. These are your max and min magnetometer readings that are used to determine the robot's orientation. Lines 11 to 13 should have their values changed to the accelerometer values recorded earlier. All the values entered above should be integers! The rest of the code simply stores all of these values into the EEPROM.
+This paragraph briefly describes the *ManualValuesIMU.ino* code shown below. Lines 3 and 4 import the libraries used for storing the calibration data. Line 8 should have the values in the {} changed to the ones recorded in *ManualValuesIMU.ino*. These are your max and min magnetometer readings that are used to determine the robot's orientation. Lines 11 to 13 should have their values changed to the accelerometer values recorded earlier. All the values entered above should be integers! The rest of the code simply stores all of these values into the EEPROM.
 
 ```cpp
 /*
@@ -367,7 +367,7 @@ void loop() {
 ```
 
 ### EEPROM Automatic Calibration
-To calibrate Pheeno automatically, open the script AutomaticCalibrateIMU.ino in the Arduino folder in the GitHub repository for Pheeno. This script does essentially what the manual script described above does(Section \ref{sec:manualCalibration}). To use this calibration program, upload the script then place Pheeno in the arena you wish to run the experiment in. Turn on the robot, it should sit still for about a minute then rotate for another minute. Once it has stopped moving it should be calibrated!
+To calibrate Pheeno automatically, open the script *AutomaticCalibrateIMU.ino* in the Arduino folder in the GitHub repository for Pheeno. This script does essentially what the manual script described above does(["Manual Calibration"](pheeno_programming_content#manual-calibration) section). To use this calibration program, upload the script then place Pheeno in the arena you wish to run the experiment in. Turn on the robot, it should sit still for about a minute then rotate for another minute. Once it has stopped moving it should be calibrated!
 
 ```cpp
 /*
@@ -519,14 +519,14 @@ void turnRight(int motorSpeed){
 
 
 ### Checking the EEPROM Calibration
-If you want to make sure the calibration information was stored correctly, open the EEPROMReadCalibrateData.ino script. Upload it to Pheeno and keep the robot connected to the computer. You do not need to turn on the robot as the computer can power the Arduino. If you open the serial monitor in the Arduino software, you should see a printout like the one seen in Figure \ref{fig:CalibrationData}. The numbers should be integers (definitely) and non-zero (most likely). If not something in the calibration has gone wrong.
+If you want to make sure the calibration information was stored correctly, open the *EEPROMReadCalibrateData.ino* script. Upload it to Pheeno and keep the robot connected to the computer. You do not need to turn on the robot as the computer can power the Arduino. If you open the serial monitor in the Arduino software, you should see a printout like the one seen in Figure [4](pheeno_programming_content#fig4). The numbers should be integers (definitely) and non-zero (most likely). If not something in the calibration has gone wrong.
 
-<figure>
+<figure id="fig4">
     <center>
         <img src="{{ site.url }}/assets/programming/CalibrationData.jpg" width="500" height="500" />
-        <figcaption>Figure 4: The serial output of the EEPROMReadCalibrateData.ino script.</figcaption>
     </center>
 </figure>
+***Figure 4:*** *The serial output of the EEPROMReadCalibrateData.ino script.*
 
 ## Pheeno Arduino Examples
 This section describes the specific Arduino examples below. To open any of the examples below, open the Arduino software then navigate to *File* --> *Examples* --> *Pheeno* --> *EXAMPLE*.
@@ -569,7 +569,7 @@ void loop(){
 
 ### PIDMotorControlExample
 
-Now if you want some *feedback* when using the motors, this script uses a function that actually checks if the motors are moving at the speed you have given to them. Lines 4 and 6 import the libraries needed to use the Pheeno library. Line 8 sets the desired velocity you want the robot to move at. This is in cm/s and can be changed to move the robot slower or faster. Line 12 converts the linear velocity to a rotational one that the controller acts on. The setup uses the standard setup and the loop uses the PIDMotorControl function described in Section \ref{sec:PIDMotorControl}.
+Now if you want some *feedback* when using the motors, this script uses a function that actually checks if the motors are moving at the speed you have given to them. Lines 4 and 6 import the libraries needed to use the Pheeno library. Line 8 sets the desired velocity you want the robot to move at. This is in cm/s and can be changed to move the robot slower or faster. Line 12 converts the linear velocity to a rotational one that the controller acts on. The setup uses the standard setup and the loop uses the PIDMotorControl function described in the ["PIDMotorControl"](pheeno_programming_content#pidmotorcontrolfloat-deslvel-float-desrvel) section.
 
 ```cpp
 /*
@@ -763,7 +763,7 @@ void loop(){
 ```
 
 ### RandomWalkObstacleAvoidExample
-This function does the same random walk as done in Section \ref{sec:randomWalk} but does not use delays so it can read the IR range sensors to avoid obstacles during the walk.
+This function does the same random walk as done in the [RandomWalkExample](pheeno_programming_content#randomwalkexample) section but does not use delays so it can read the IR range sensors to avoid obstacles during the walk.
 
 ```cpp
 /*
@@ -903,7 +903,7 @@ void setup(){
 }
 
 void loop() {
-    while (calculateDistance(myRobot.botXPos,myRobot.botYPos,botXf[count%numWayPoints],botYf[count%numWayPoints]) > 3){
+    while (calculateDistance(myRobot.botXPos,myRobot.botYPos, botXf[count%numWayPoints], botYf[count%numWayPoints]) > 3){
         myRobot.PIDWayPointControl(botXf[count%numWayPoints],botYf[count%numWayPoints],desVel,timeStep);
         // Encoders used for state estimates.
         myRobot.encoderPositionUpdate(timeStep);
