@@ -3,13 +3,23 @@
 		<head>
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
-			<!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
+			<!-- <link rel="stylesheet" type="text/css" href="/css/guides.css"> -->
             <link rel="stylesheet" href="/css/hyde.css">
             <link rel="stylesheet" href="/css/poole.css">
             <link rel="stylesheet" href="/css/syntax.css">
 		</head>
 		<body>
-            {% include sidebar.html %}
+            {% if page.title == "Pheeno Construction Guide" %}
+                {% include sidebar_pg_construction.html %}
+            {% elsif page.title == "Beginning to Program Pheeno" %}
+                {% include sidebar_pg_programming.html %}
+            {% elsif page.title == "Pheeno Software Installation" %}
+                {% include sidebar_pg_software.html %}
+            {% elsif page.title == "Setting Up Raspberry Pi with Camera for Pheeno" %}
+                {% include sidebar_pg_raspberry_pi.html %}
+            {% else %}
+                {% include sidebar.html %}
+            {% endif %}
 			<!-- <nav>
 	    		<ul>
 	        		<li><a href="/">Home</a></li>

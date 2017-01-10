@@ -1,0 +1,119 @@
+body {
+    margin: 60px auto;
+    width: 70%;
+    counter-reset: h2;
+}
+h1 {
+    font-size: 3em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+h2 {
+    font-size: 2em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    counter-reset: h3;
+}
+h2:before {
+    counter-increment: h2;
+    content: counter(h2) ". ";
+}
+h2:nocount:before {
+    content: "";
+    counter-increment: none;
+}
+h3 {
+    font-size: 1.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    counter-reset: h4;
+}
+h3:before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ". ";
+}
+h3:nocount:before {
+    content: "";
+    counter-increment: none;
+}
+h4 {
+    font-size: 1.3em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    counter-reset: h5;
+}
+h4:before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ". ";
+}
+h4:nocount:before {
+    content: "";
+    counter-increment: none;
+}
+nav ul, footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+a {
+    text-decoration: none;
+    color: #999;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    font-size: 1.25em;
+    line-height: 1.4em;
+    color: #333;
+}
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+}
+
+ul li{
+    margin: 10px auto 10px;
+    font-size: 1.25em;
+}
+
+ul.posts {
+    margin: 20px auto 40px;
+    font-size: 1.5em;
+}
+
+ul.posts li {
+    list-style: none;
+}
+
+code {
+    font-size: 1.3em;
+    font-family: monospace;
+    word-wrap: break-all;
+}
+
+img {
+    vertical-align: middle;
+}
+
+figure {
+    counter-increment: figure;
+    content: counter(figure)
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

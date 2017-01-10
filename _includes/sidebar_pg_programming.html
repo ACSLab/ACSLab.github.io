@@ -1,0 +1,70 @@
+<div class="sidebar">
+    <h1><a href="{{ site.url }}/">ACS Laboratory</a></h1>
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+            <h1>
+                <!-- <a href="{{ site.baseurl }}">{{ site.title }}</a> -->
+            </h1>
+            <p class="lead">{{ site.description }}</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a class="sidebar-nav-item" href="pheeno_programming_content#general-pin-information-for-connection-between-the-arduino-and-motors-and-sensors">General Pin Information for Connection between the Arduino and Motors/Sensors.</a>
+            <a class="sidebar-nav-item" href="pheeno_programming_content#getting-started">Getting Started</a>
+            <ul>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#installing-arduino">Installing Arduino</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#installing-the-pheeno-libraries">Installing the Pheeno Libraries</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#uploading-your-first-script">Uploading Your First Script</a></li>
+            </ul>
+
+            <a class="sidebar-nav-item" href="pheeno_programming_content#pheeno-arduino-library-functions">Pheeno Arduino Library Functions</a>
+            <ul>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#myrobotsetup">myRobot.SETUP()</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#sensor-reading-functions">Sensor Reading Functions</a></li>
+                <ul>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#myrobotreadir">myRobot.readIR()</a></li>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#readencoders">readEncoders()</a></li>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#pheenoreadcompassfloat-magnorthoffset">Pheeno.readCompass(float magNorthOffset)</a></li>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#pheenoreadaccel">Pheeno.readAccel()</a></li>
+                </ul>
+
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#position-update-functions">Position Update Functions</a></li>
+                <ul>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#pheenoencoderpositionupdatefloat-timestep">Pheeno.encoderPositionUpdate(float timeStep)</a></li>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#pheenosensorfusionpositionupdatefloat-timestep-float-northoffset">Pheeno.sensorFusionPositionUpdate(float timestep, float northOffset)</a></li>
+                </ul>
+
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#individual-motor-functions">Individual Motor Functions</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#dual-motor-functions">Dual Motor Functions</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#stopping-functions">Stopping Functions</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#controller-functions">Controller Functions</a></li>
+                <ul>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#pidmotorcontrolfloat-deslvel-float-desrvel">PIDMotorControl(float desLVel, float desRVel)</a></li>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#pidwaypointcontrolfloat-u1-float-u2-float-desvelocity-float-timestep">PIDWayPointControl(float u1, float u2, float desVelocity, float timeStep)</a></li>
+                    <li><a class="sidebar-nav-item" href="pheeno_programming_content#rotateabouticcfloat-r-float-wspeed">rotateAboutICC(float R, float WSpeed)</a></li>
+                </ul>
+
+            </ul>
+            <a class="sidebar-nav-item" href="pheeno_programming_content#calibrating-pheenos-imu">Calibrating Pheeno's IMU</a>
+            <ul>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#manual-calibration">Manual Calibration</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#eeprom-automatic-calibration">EEPROM Automatic Calibration</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#checking-the-eeprom-calibration">Checking the EEPROM Calibration</a></li>
+            </ul>
+
+            <a class="sidebar-nav-item" href="pheeno_programming_content#pheeno-arduino-examples">Pheeno Arduino Examples</a>
+            <ul>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#openloopmotionexampleino">OpenLoopMotionExample.ino</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#pidmotorcontrolexample">PIDMotorControlExample</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#randomwalkexample">RandomWalkExample</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#serialprintsensors">SerialPrintSensors</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#drivecircleexample">DriveCircleExample</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#randomwalkobstacleavoidexample">RandomWalkObstacleAvoidExample</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#waypointencoders">WayPointEncoders</a></li>
+                <li><a class="sidebar-nav-item" href="pheeno_programming_content#waypointsensorfusion">wayPointSensorFusion</a></li>
+            </ul>
+        </nav>
+
+        <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    </div>
+</div>
